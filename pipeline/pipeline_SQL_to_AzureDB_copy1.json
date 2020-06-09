@@ -1,0 +1,154 @@
+{
+	"name": "pipeline_SQL_to_AzureDB_copy1",
+	"properties": {
+		"description": "Select from on prem then into csv and AzureDB",
+		"activities": [
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"sqlReaderQuery": "SELECT TOP 5 [AccountKey]\n      ,[ParentAccountKey]\n      ,[AccountCodeAlternateKey]\n      ,[ParentAccountCodeAlternateKey]\n      ,[AccountDescription]\n      ,[AccountType]\n      ,[Operator]\n      ,[CustomMembers]\n      ,[ValueType]\n      ,[CustomMemberOptions]\n  FROM [dbo].[DimAccount]",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "AzureSqlSink"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "AccountKey",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "AccountKey",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "ParentAccountKey",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "ParentAccountKey",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "AccountCodeAlternateKey",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "AccountCodeAlternateKey",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "ParentAccountCodeAlternateKey",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "ParentAccountCodeAlternateKey",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "AccountDescription",
+									"type": "String"
+								},
+								"sink": {
+									"name": "AccountDescription",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "AccountType",
+									"type": "String"
+								},
+								"sink": {
+									"name": "AccountType",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Operator",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Operator",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CustomMembers",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CustomMembers",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ValueType",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ValueType",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CustomMemberOptions",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CustomMemberOptions",
+									"type": "String"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SqlServerTable1",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "AzureSqlTable1",
+						"type": "DatasetReference",
+						"parameters": {
+							"AzureTableName": "DimAccount_Azure2"
+						}
+					}
+				]
+			}
+		],
+		"annotations": []
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
