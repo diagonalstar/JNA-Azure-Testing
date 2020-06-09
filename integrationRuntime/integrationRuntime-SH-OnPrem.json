@@ -1,0 +1,7 @@
+{
+	"name": "integrationRuntime-SH-OnPrem",
+	"properties": {
+		"type": "SelfHosted",
+		"description": "SQL SERVER OnPrem Test"
+	}
+}

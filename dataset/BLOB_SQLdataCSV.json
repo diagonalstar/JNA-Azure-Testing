@@ -1,0 +1,65 @@
+{
+	"name": "BLOB_SQLdataCSV",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage_SQLcsv",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "DimAccount.csv",
+				"container": "blob-sql-data"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "AccountKey",
+				"type": "String"
+			},
+			{
+				"name": "ParentAccountKey",
+				"type": "String"
+			},
+			{
+				"name": "AccountCodeAlternateKey",
+				"type": "String"
+			},
+			{
+				"name": "ParentAccountCodeAlternateKey",
+				"type": "String"
+			},
+			{
+				"name": "AccountDescription",
+				"type": "String"
+			},
+			{
+				"name": "AccountType",
+				"type": "String"
+			},
+			{
+				"name": "Operator",
+				"type": "String"
+			},
+			{
+				"name": "CustomMembers",
+				"type": "String"
+			},
+			{
+				"name": "ValueType",
+				"type": "String"
+			},
+			{
+				"name": "CustomMemberOptions",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,71 @@
+{
+	"name": "AzureSqlTable1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase_JNA",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"AzureTableName": {
+				"type": "String",
+				"defaultValue": "DimAccount_Azure"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "AccountKey",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ParentAccountKey",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "AccountCodeAlternateKey",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ParentAccountCodeAlternateKey",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "AccountDescription",
+				"type": "nvarchar"
+			},
+			{
+				"name": "AccountType",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Operator",
+				"type": "nvarchar"
+			},
+			{
+				"name": "CustomMembers",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ValueType",
+				"type": "nvarchar"
+			},
+			{
+				"name": "CustomMemberOptions",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": {
+				"value": "@dataset().AzureTableName",
+				"type": "Expression"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
