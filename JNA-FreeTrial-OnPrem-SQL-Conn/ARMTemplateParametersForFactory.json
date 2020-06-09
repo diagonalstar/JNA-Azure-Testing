@@ -1,0 +1,24 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "JNA-FreeTrial-OnPrem-SQL-Conn"
+		},
+		"AzureBlobStorage_SQLcsv_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabase_JNA_connectionString": {
+			"value": ""
+		},
+		"SqlServer_OnPrem_connectionString": {
+			"value": ""
+		},
+		"SqlServer_OnPrem_password": {
+			"value": ""
+		},
+		"SqlServer_OnPrem_properties_typeProperties_userName": {
+			"value": "Jason-Laptop\\JAsh"
+		}
+	}
+}
