@@ -10,7 +10,10 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "AllportCSV",
+				"fileName": {
+					"value": "@concat('Allport_','.csv')",
+					"type": "Expression"
+				},
 				"container": "testing-csv"
 			},
 			"columnDelimiter": ";",
