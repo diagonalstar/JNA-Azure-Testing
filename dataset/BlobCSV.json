@@ -11,7 +11,7 @@
 			"location": {
 				"type": "AzureBlobStorageLocation",
 				"fileName": {
-					"value": "@concat('Allport_',utcnow(),'.csv')",
+					"value": "@concat('Allport_',formatDateTime(utcnow(),'yyyMMdd_HHmmss'),'.csv')",
 					"type": "Expression"
 				},
 				"container": "testing-csv"
