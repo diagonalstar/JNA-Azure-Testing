@@ -64,6 +64,10 @@
 			"vFilename": {
 				"type": "string",
 				"defaultValue": "JasonTest20200625.csv"
+			},
+			"CopyCARS": {
+				"type": "string",
+				"defaultValue": "Yes"
 			}
 		},
 		"annotations": []
