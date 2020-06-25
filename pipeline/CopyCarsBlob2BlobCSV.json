@@ -81,7 +81,7 @@
 			},
 			"CopyCARS": {
 				"type": "bool",
-				"defaultValue": "TRUE"
+				"defaultValue": true
 			}
 		},
 		"annotations": []
