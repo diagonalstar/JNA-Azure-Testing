@@ -9,7 +9,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"expression": {
-						"value": "@pipeline().parameters.CopyCARS",
+						"value": "@bool(true)",
 						"type": "Expression"
 					},
 					"ifFalseActivities": [
