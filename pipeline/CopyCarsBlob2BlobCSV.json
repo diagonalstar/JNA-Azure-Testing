@@ -8,28 +8,76 @@
 				"dependsOn": [],
 				"userProperties": [],
 				"typeProperties": {
+					"expression": {
+						"value": "@bool(pipeline().parameters.copytoOutput1)",
+						"type": "Expression"
+					},
 					"ifTrueActivities": [
 						{
-							"name": "Wait1",
-							"type": "Wait",
+							"name": "Copy data1",
+							"type": "Copy",
 							"dependsOn": [],
+							"policy": {
+								"timeout": "7.00:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
 							"userProperties": [],
 							"typeProperties": {
-								"waitTimeInSeconds": 1
-							}
+								"source": {
+									"type": "DelimitedTextSource",
+									"storeSettings": {
+										"type": "AzureBlobStorageReadSettings",
+										"recursive": true
+									},
+									"formatSettings": {
+										"type": "DelimitedTextReadSettings"
+									}
+								},
+								"sink": {
+									"type": "DelimitedTextSink",
+									"storeSettings": {
+										"type": "AzureBlobStorageWriteSettings"
+									},
+									"formatSettings": {
+										"type": "DelimitedTextWriteSettings",
+										"quoteAllText": true,
+										"fileExtension": ".txt"
+									}
+								},
+								"enableStaging": false,
+								"translator": {
+									"type": "TabularTranslator",
+									"typeConversion": true,
+									"typeConversionSettings": {
+										"allowDataTruncation": true,
+										"treatBooleanAsNumber": false
+									}
+								}
+							},
+							"inputs": [
+								{
+									"referenceName": "BLOB_Cars_SOURCE",
+									"type": "DatasetReference"
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "BLOB_cars_DEST",
+									"type": "DatasetReference"
+								}
+							]
 						}
 					]
 				}
 			}
 		],
 		"parameters": {
-			"vFilename": {
+			"copytoOutput1": {
 				"type": "string",
-				"defaultValue": "JasonTest20200625.csv"
-			},
-			"CopyCARS": {
-				"type": "string",
-				"defaultValue": "Yes"
+				"defaultValue": "true"
 			}
 		},
 		"annotations": []
