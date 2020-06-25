@@ -8,24 +8,9 @@
 				"dependsOn": [],
 				"userProperties": [],
 				"typeProperties": {
-					"expression": {
-						"value": "@bool(true)",
-						"type": "Expression"
-					},
-					"ifFalseActivities": [
-						{
-							"name": "Wait_False",
-							"type": "Wait",
-							"dependsOn": [],
-							"userProperties": [],
-							"typeProperties": {
-								"waitTimeInSeconds": 1
-							}
-						}
-					],
 					"ifTrueActivities": [
 						{
-							"name": "Wait_True",
+							"name": "Wait1",
 							"type": "Wait",
 							"dependsOn": [],
 							"userProperties": [],
@@ -43,8 +28,8 @@
 				"defaultValue": "JasonTest20200625.csv"
 			},
 			"CopyCARS": {
-				"type": "bool",
-				"defaultValue": false
+				"type": "string",
+				"defaultValue": "Yes"
 			}
 		},
 		"annotations": []
