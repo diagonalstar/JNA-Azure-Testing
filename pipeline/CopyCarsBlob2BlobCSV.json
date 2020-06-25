@@ -12,6 +12,17 @@
 						"value": "@pipeline().parameters.CopyCARS",
 						"type": "Expression"
 					},
+					"ifFalseActivities": [
+						{
+							"name": "Wait_False",
+							"type": "Wait",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"waitTimeInSeconds": 1
+							}
+						}
+					],
 					"ifTrueActivities": [
 						{
 							"name": "Wait_True",
