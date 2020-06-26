@@ -1,0 +1,35 @@
+{
+	"name": "BLOB_cars_DEST",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage_SQLcsv",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "JasonTest20200625.csv",
+				"container": "container-cars-csv"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			}
+		]
+	}
+}
