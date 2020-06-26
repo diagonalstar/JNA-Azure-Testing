@@ -3,7 +3,17 @@
 	"properties": {
 		"annotations": [],
 		"runtimeState": "Started",
-		"pipelines": [],
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "CopyCarsBlob2BlobCSV",
+					"type": "PipelineReference"
+				},
+				"parameters": {
+					"copytoOutput1": "true"
+				}
+			}
+		],
 		"type": "ScheduleTrigger",
 		"typeProperties": {
 			"recurrence": {
@@ -13,7 +23,7 @@
 				"timeZone": "UTC",
 				"schedule": {
 					"minutes": [
-						30
+						55
 					],
 					"hours": [
 						9
