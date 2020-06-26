@@ -27,6 +27,10 @@
 			"type": "string",
 			"defaultValue": "Jason-Laptop\\JAsh"
 		},
+		"Daily - 0935_properties_CopyCarsBlob2BlobCSV_parameters_copytoOutput1": {
+			"type": "string",
+			"defaultValue": "true"
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -68,6 +72,9 @@
 					},
 					"SqlServer_OnPrem_properties_typeProperties_userName": {
 						"value": "[parameters('SqlServer_OnPrem_properties_typeProperties_userName')]"
+					},
+					"Daily - 0935_properties_CopyCarsBlob2BlobCSV_parameters_copytoOutput1": {
+						"value": "[parameters('Daily - 0935_properties_CopyCarsBlob2BlobCSV_parameters_copytoOutput1')]"
 					}
 				}
 			},

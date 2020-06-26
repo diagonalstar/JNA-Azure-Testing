@@ -20,6 +20,9 @@
 		"SqlServer_OnPrem_properties_typeProperties_userName": {
 			"value": "Jason-Laptop\\JAsh"
 		},
+		"Daily - 0935_properties_CopyCarsBlob2BlobCSV_parameters_copytoOutput1": {
+			"value": "true"
+		},
 		"containerUri": {
 			"value": ""
 		},
