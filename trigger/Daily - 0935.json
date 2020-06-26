@@ -3,17 +3,7 @@
 	"properties": {
 		"annotations": [],
 		"runtimeState": "Started",
-		"pipelines": [
-			{
-				"pipelineReference": {
-					"referenceName": "CopyCarsBlob2BlobCSV",
-					"type": "PipelineReference"
-				},
-				"parameters": {
-					"copytoOutput1": "true"
-				}
-			}
-		],
+		"pipelines": [],
 		"type": "ScheduleTrigger",
 		"typeProperties": {
 			"recurrence": {
